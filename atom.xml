@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://maymorn.github.io</id>
+    <title>MayMorn</title>
+    <updated>2020-11-10T09:25:40.353Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://maymorn.github.io"/>
+    <link rel="self" href="https://maymorn.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://maymorn.github.io/images/avatar.png</logo>
+    <icon>https://maymorn.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, MayMorn</rights>
+    <entry>
+        <title type="html"><![CDATA[git提交时403错误]]></title>
+        <id>https://maymorn.github.io/post/git-ti-jiao-shi-403-cuo-wu/</id>
+        <link href="https://maymorn.github.io/post/git-ti-jiao-shi-403-cuo-wu/">
+        </link>
+        <updated>2020-11-10T09:14:33.000Z</updated>
+    </entry>
+</feed>
