@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | MayMorn</title>
+<title>记录几个笔试题 | MayMorn</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://maymorn.github.io">MayMorn</a></h3>
@@ -79,12 +80,49 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>记录几个笔试题</h1>
+            <p class="article-meta">
+              2020-11-10
+              
+            </p>
             
-          </div>
+            <div class="post-content">
+              <h4 id="1">1</h4>
+<p><strong>下面代码的输出结果是什么</strong></p>
+<pre><code>var val = 12
+function func1() {
+    console.log(val)
+    var val = 20
+    console.log(val)
+}
+</code></pre>
+<p>答案：  <code>undefined 20</code><br>
+知识点：函数会优先找自己的内部变量，<code>var</code>变量提升，所以第一个<code>val</code>为<code>undefined</code></p>
+<h4 id="2">2</h4>
+<p><strong>创建带有ID属性的DOM元素有什么副作用？</strong><br>
+解答：如果一个元素拥有ID属性，那么ID属性的属性值就会成为window对象的属性名。</p>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://maymorn.github.io/post/javascript-yun-suan-fu-bu-fen-xiang-guan-zhi-shi-dian/">
+                <h3 class="post-title">
+                  javascript &#34;==&#34; 运算符部分相关知识点
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://maymorn.github.io/images/avatar.png?v=1605003671708" class="no-responsive avatar">
@@ -153,7 +191,8 @@
      | <a class="rss" href="https://maymorn.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
