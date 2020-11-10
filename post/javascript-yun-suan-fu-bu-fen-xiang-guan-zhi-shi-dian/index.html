@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | MayMorn</title>
+<title>javascript &#34;==&#34; 运算符部分相关知识点 | MayMorn</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://maymorn.github.io">MayMorn</a></h3>
@@ -79,12 +80,64 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>javascript &#34;==&#34; 运算符部分相关知识点</h1>
+            <p class="article-meta">
+              2020-11-10
+              
+            </p>
             
-          </div>
+            <div class="post-content">
+              <p><strong><code>==</code> 运算符在操作两个不同类型的变量时：</strong></p>
+<ul>
+<li>如果一个值是<code>null</code>，另一个值是<code>undefined</code>，则它们相等。</li>
+<li>如果一个值是数字，另一个值是字符串，先将字符串转换为数字，然后使用转换后的值进行比较。</li>
+<li>如果其中一个值是<code>true</code>，则将其转换为1再进行比较。</li>
+<li>如果其中一个值是<code>false</code>，则将其转换为0再进行比较。</li>
+<li>如果一个值是对象，另一个值是数字或字符串，则将对象转换为原始值，再进行比较。</li>
+</ul>
+<p><strong>对象转换为数字</strong></p>
+<ul>
+<li>如果对象具有<code>valueOf()</code>方法，后者返回一个原始值，则javascript将这个原始值转换为数字(如果需要的话)并返回一个数字</li>
+<li>否则，如果对象具有<code>toString()</code>方法，后者返回一个原始值，则javascript将其转换并返回。javascript将这个字符串转换为数字类型，并返回这个数字。</li>
+<li>否则，javascript抛出一个类型错误异常。</li>
+</ul>
+<p><strong>空数组转换为数字0</strong><br>
+数组继承了默认的<code>valueOf()</code>方法，这个方法返回一个对象而不是一个原始值，因此，数组到数字的转换则调用<code>toString()</code>方法。空数组转换为空字符串，空字符串转换为数字0</p>
+<h4 id="一个题目">一个题目</h4>
+<pre><code class="language-javascript">// 分别输出什么？
+console.log(([]) ? true : false)
+console.log(([] == false ? true : false))
+console.log(({} == false) ? true : false)
+</code></pre>
+<p>** 答案解析**<br>
+由上面的知识点不难得出：</p>
+<pre><code class="language-javascript">(true) ? true : false
+0 == 0 ? true : false
+NaN == 0 ? true : false
+</code></pre>
+<p>所以结果为：<code>true,true,false</code></p>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://maymorn.github.io/post/git-ti-jiao-shi-403-cuo-wu/">
+                <h3 class="post-title">
+                  git提交时403错误
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://maymorn.github.io/images/avatar.png?v=1605002135537" class="no-responsive avatar">
@@ -147,7 +200,8 @@
      | <a class="rss" href="https://maymorn.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
