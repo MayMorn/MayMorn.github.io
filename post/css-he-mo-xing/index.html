@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | MayMorn</title>
+<title>CSS 盒模型 | MayMorn</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://maymorn.github.io">MayMorn</a></h3>
@@ -76,76 +77,50 @@
   </div>
 </nav>
 
-    
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          
+          <article class="article">
+            <h1>CSS 盒模型</h1>
+            <p class="article-meta">
+              2020-11-23
+              
+            </p>
+            
+            <div class="post-content">
+              <p>盒模型分为IE盒模型和W3C标准盒模型</p>
+<h3 id="区别">区别</h3>
+<ul>
+<li>W3C标准盒模型:<br>
+属性<code>width</code>，<code>height</code>只包含内容<code>content</code>，不包含<code>border</code>和<code>padding</code></li>
+<li>IE盒模型：<br>
+属性<code>width</code>，<code>height</code>包含内容<code>content</code>，也包含<code>border</code>和<code>padding</code></li>
+</ul>
+<blockquote>
+<p>在IE8+浏览器中可以使用<code>box-sizing</code>控制使用哪个盒模型，默认值为<code>content-box</code>即标准盒模型；<br>
+设置为<code>border-box</code>则是使用IE盒模型</p>
+</blockquote>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h3 class="year" data-aos-delay="500">2020</h3>
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/css-he-mo-xing/">
-                      <h4 class="post-title">
-                        CSS 盒模型
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/xing-nei-yuan-su-he-kuai-ji-yuan-su/">
-                      <h4 class="post-title">
-                        行内元素和块级元素
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/ji-lu-ji-ge-bi-shi-ti/">
-                      <h4 class="post-title">
-                        记录几个面试/笔试题
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/javascript-yun-suan-fu-bu-fen-xiang-guan-zhi-shi-dian/">
-                      <h4 class="post-title">
-                        javascript &#34;==&#34; 运算符部分相关知识点
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/git-ti-jiao-shi-403-cuo-wu/">
-                      <h4 class="post-title">
-                        git提交时403错误
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
-
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://maymorn.github.io/post/xing-nei-yuan-su-he-kuai-ji-yuan-su/">
+                <h3 class="post-title">
+                  行内元素和块级元素
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://maymorn.github.io/images/avatar.png?v=1606120398679" class="no-responsive avatar">
@@ -227,6 +202,8 @@
   </div>
 </div>
 
+
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 

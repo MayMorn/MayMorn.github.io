@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | MayMorn</title>
+<title>行内元素和块级元素 | MayMorn</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://maymorn.github.io">MayMorn</a></h3>
@@ -76,76 +77,93 @@
   </div>
 </nav>
 
-    
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          
+          <article class="article">
+            <h1>行内元素和块级元素</h1>
+            <p class="article-meta">
+              2020-11-23
+              
+            </p>
+            
+            <div class="post-content">
+              <ul>
+<li>
+<p><strong>常用的行内元素</strong>：</p>
+<ul>
+<li>span</li>
+<li>img</li>
+<li>a</li>
+<li>button</li>
+<li>...</li>
+</ul>
+</li>
+<li>
+<p><strong>常用的块级元素</strong></p>
+<ul>
+<li>div</li>
+<li>p</li>
+<li>h1 ~ h6</li>
+<li>table</li>
+<li>ul、li、ol</li>
+<li>header、footer</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<h4 id="特点">特点</h4>
+<ul>
+<li>
+<p>行内元素</p>
+<ul>
+<li>相邻的行内元素不换行，设置宽和高无效。</li>
+<li><code>margin</code>仅左右方向有效，上下无效；<code>padding</code>设置上下左右都有效。</li>
+</ul>
+</li>
+<li>
+<p>块级元素</p>
+<ul>
+<li>能够自动开启新的一行，能够设置宽高。</li>
+<li><code>margin</code>和<code>padding</code>对上下左右四个方向设置都有效。</li>
+</ul>
+</li>
+<li>
+<p>行内块级元素</p>
+<ul>
+<li>元素开启新的一行，可设置宽度、高度以及<code>margin</code>和<code>padding</code></li>
+</ul>
+<blockquote>
+<ul>
+<li></li>
+</ul>
+<p><code>display: inline;</code> 行内元素<br>
+<code>display: block;</code> 块级元素<br>
+<code>display: inline-block;</code> 行内块级元素</p>
+</blockquote>
+</li>
+</ul>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h3 class="year" data-aos-delay="500">2020</h3>
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/css-he-mo-xing/">
-                      <h4 class="post-title">
-                        CSS 盒模型
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/xing-nei-yuan-su-he-kuai-ji-yuan-su/">
-                      <h4 class="post-title">
-                        行内元素和块级元素
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/ji-lu-ji-ge-bi-shi-ti/">
-                      <h4 class="post-title">
-                        记录几个面试/笔试题
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/javascript-yun-suan-fu-bu-fen-xiang-guan-zhi-shi-dian/">
-                      <h4 class="post-title">
-                        javascript &#34;==&#34; 运算符部分相关知识点
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://maymorn.github.io/post/git-ti-jiao-shi-403-cuo-wu/">
-                      <h4 class="post-title">
-                        git提交时403错误
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
-
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://maymorn.github.io/post/ji-lu-ji-ge-bi-shi-ti/">
+                <h3 class="post-title">
+                  记录几个面试/笔试题
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://maymorn.github.io/images/avatar.png?v=1606120398679" class="no-responsive avatar">
@@ -227,6 +245,8 @@
   </div>
 </div>
 
+
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
