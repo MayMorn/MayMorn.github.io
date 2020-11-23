@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>css | MayMorn</title>
+<title>apply、call和bind | MayMorn</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://maymorn.github.io">MayMorn</a></h3>
@@ -79,64 +80,93 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="current-tag">标签: css</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://maymorn.github.io/post/css-he-mo-xing/">CSS 盒模型</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-23
-      
-        <a href="https://maymorn.github.io/tag/css/" class="badge success">
-          css
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://maymorn.github.io/post/css-he-mo-xing/" class="readmore-link">
-        <button>
-          更多
-        </button>
-      </a>
-    </div>
-  </article>
+          <article class="article">
+            <h1>apply、call和bind</h1>
+            <p class="article-meta">
+              2020-11-23
+              
+                <a href="https://maymorn.github.io/tag/javascript/" class="badge secondary">
+                  javascript
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h3 id="apply">apply</h3>
+<h4 id="定义">定义</h4>
+<blockquote>
+<p>apply()方法调用一个函数，其具有一个指定的<code>this</code>值，以及作为一个数组(或类似数组的对象)提供的参数。</p>
+</blockquote>
+<h4 id="语法">语法</h4>
+<blockquote>
+<p><code>func.apply(thisArg, [argsArray])</code></p>
+</blockquote>
+<ul>
+<li><code>thisArg</code>：在func函数运行时指定的<code>this</code>值。如果函数处于非严格模式下，则指定为<code>null</code>或者<code>undefined</code>时会自动指向全局对象(浏览器中就是<code>window</code>对象)，同时值为原始值(数字，字符串，布尔值)的<code>this</code>会指向该原始值的自动包装对象。</li>
+<li><code>argsArray</code>：一个数组或者类数组对象，其中的数组元素将作为单独的参数传给<code>func</code>函数。如果该值为<code>null</code>或<code>undefined</code>则表示不需要传入任何参数。</li>
+</ul>
+<pre><code class="language-javascript">const numbers = [5, 6, 7, 2, 1]
 
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://maymorn.github.io/post/xing-nei-yuan-su-he-kuai-ji-yuan-su/">行内元素和块级元素</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-23
-      
-        <a href="https://maymorn.github.io/tag/css/" class="badge success">
-          css
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://maymorn.github.io/post/xing-nei-yuan-su-he-kuai-ji-yuan-su/" class="readmore-link">
-        <button>
-          更多
-        </button>
-      </a>
-    </div>
-  </article>
+const max = Math.max.apply(null, numbers)
 
+console(max) // 7
+</code></pre>
+<h3 id="call">call</h3>
+<p><code>call</code>与<code>apply</code>类似，区别在于<code>call</code>方法接受的是参数列表，而<code>apply()</code>方法接受的是一个参数数组。</p>
+<pre><code class="language-javascript">function Product(name, price) {
+    this.name = name
+    this.price = price
+}
+function Food(name, price) {
+    product.call(this, name, price)
+    this.category = 'food'
+}
+console.log(new Food('cheese', 5).name) // cheese
 
+</code></pre>
+<h3 id="bind">bind</h3>
+<h4 id="定义-2">定义</h4>
+<p><code>bind</code>方法创建一个新的函数，在<code>bind</code>被调用时，这个新函数的<code>this</code>被指定为<code>bind</code>的第一个参数，而其余参数将作为新函数的参数，供调用时使用。</p>
+<pre><code class="language-javascript">const module = {
+    x: 42,
+    getX: function() {
+        return this.x
+    }
+}
+
+const unboundGetX = module.getX
+console.log(unboundGetX()) // undefined
+
+const boundGetX = unboundGetX.bind(module)
+console.log(boundGetX) // 42
+</code></pre>
+<h3 id="总结">总结</h3>
+<ul>
+<li><code>apply</code>，<code>call</code>，<code>bind</code>都可以用来改变函数的this对象的指向。</li>
+<li>三者的第一个参数都是this要指向的对象，也就是想指定的上下文。</li>
+<li><code>bind</code>返回一个函数以便于稍后调用，而<code>apply</code>，<code>call</code>则是立即调用。</li>
+</ul>
+
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
-
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://maymorn.github.io/post/css-he-mo-xing/">
+                <h3 class="post-title">
+                  CSS 盒模型
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://maymorn.github.io/images/avatar.png?v=1606145357943" class="no-responsive avatar">
@@ -223,11 +253,11 @@
     </div>
     <div class="row">
       
-        <a href="https://maymorn.github.io/tag/javascript/" class="badge warning">
+        <a href="https://maymorn.github.io/tag/javascript/" class="badge success">
           javascript
         </a>
       
-        <a href="https://maymorn.github.io/tag/css/" class="badge ">
+        <a href="https://maymorn.github.io/tag/css/" class="badge secondary">
           css
         </a>
       
@@ -237,6 +267,7 @@
      | <a class="rss" href="https://maymorn.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
+
 
     </div>
 
